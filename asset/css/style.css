@@ -1,0 +1,17 @@
+header{
+    background-color: aqua;
+    grid-template-areas: cabezera;
+}
+
+main {
+    border: 10px solid;
+    height: 50;
+    grid-template-areas: main;
+}
+
+footer {
+    background-color: brown;
+    grid-template-areas: footer;
+}
+
+
