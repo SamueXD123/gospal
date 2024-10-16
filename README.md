@@ -1,1 +1,1 @@
-# gaspell
+# gospell
