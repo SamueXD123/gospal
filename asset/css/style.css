@@ -5,12 +5,16 @@
 }
 
 
+body {
+    margin-top: 20vh;
+    
+}
 
 .flexbox {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 5rem;
+    align-items: end;
+    margin: 10px;
     height: 200px;
     width: 300px;
     background-color: rgb(224, 241, 241);
@@ -19,7 +23,7 @@
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
-    
+    margin-left: 15rem;
     
 }
 
@@ -27,17 +31,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .input {
-    margin: 10px;
+    margin-bottom : 70px;
     width: 200px;
     
 }
 
 button   {
-margin-top: 10px;
+margin-top: 5px;
 margin-left: 50px;
 width: 100px;
 
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    
 }
