@@ -1,7 +1,29 @@
-const main = document.querySelector("#parrafo")
-main.innerText = "desde el javascript"
+import { citasBiblicas } from './citasBiblicas.js';
+const btnEnviar = document.querySelector("#enviar")
+const inputNombre = document.querySelector("#nombre")
 
-const footer = document.querySelector("footer")
+btnEnviar.addEventListener("click", function () {
 
-footer.innerHTML = "Hecho por Samu y jerlib"
+    const nombre = inputNombre.value
+
+
+    alert(`Nombre ingresado: ${nombre}`)
+})
+
+
+
+for (const cita of citasBiblicas) {
+    const contenedor = document.createElement('div');
+    contenedor.classList.add('cita-container');
+
+    contenedor.innerHTML = `
+        <h3>${cita.cita}</h3>
+        <p><strong>Versículo:</strong> ${cita.texto}</p>
+        <p><strong>Paráfrasis:</strong> ${cita.parafraseo}</p>
+        // <img src="${cita.imagen}" alt="Imagen de la cita">
+    `;
+
+    document.body.appendChild(contenedor);
+    console.log(contenedor);
+}
 
