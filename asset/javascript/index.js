@@ -1,45 +1,4 @@
-// import { citasBiblicas } from './citasBiblicas.js';
-
-// const btnEnviar = document.querySelector("#enviar");
-// const inputNombre = document.querySelector("#nombre");
-
-// const mainContainer = document.createElement("div");
-// mainContainer.id = "citas-container";
-// document.body.appendChild(mainContainer);
-
-// btnEnviar.addEventListener("click", function () {
-//     const nombre = inputNombre.value;
-
-//     if (!nombre) {
-//         alert("Por favor, ingresa tu nombre.");
-//         return;
-//     }
-
-//     mainContainer.innerHTML = "";
-
-//     const citaAleatoria = citasBiblicas[Math.floor(Math.random() * citasBiblicas.length)];
-
-//     const contenedor = document.createElement('div');
-//     contenedor.classList.add('cita-container');
-
-//     contenedor.innerHTML = `
-//     <h3>${citaAleatoria.cita}</h3>
-//     <p><strong>Versículo:</strong> ${citaAleatoria.texto}</p>
-//     <p><strong>Paráfrasis:</strong> ${citaAleatoria.parafraseo}</p>
-//     <img src="${citaAleatoria.img}" alt="Citas Bíblicas" style="max-width: 100%; height: auto;">
-//     <p style="color: green; font-weight: bold;">Esta promesa es para ti, ${nombre}.</p>
-// `;
-
-
-//     mainContainer.appendChild(contenedor);
-
-//     inputNombre.value = "";
-
-//     alert(`Nombre ingresado: ${nombre}. Se ha agregado una nueva promesa.`);
-// });
-
-
-import { citasBiblicas } from './citasBiblicas.js';
+import { citasBiblicas } from '../javascript/citasBiblicas.js';
 
 const btnEnviar = document.querySelector("#enviar");
 const inputNombre = document.querySelector("#nombre");
@@ -72,6 +31,7 @@ btnEnviar.addEventListener("click", function () {
 // Función para agregar una cita aleatoria
 function agregarCitaAleatoria(nombre) {
     const citaAleatoria = citasBiblicas[Math.floor(Math.random() * citasBiblicas.length)];
+    console.log(citaAleatoria)
 
     const contenedor = document.createElement("div");
     contenedor.classList.add("cita-container");
@@ -84,12 +44,10 @@ function agregarCitaAleatoria(nombre) {
     contenedor.innerHTML = `
     <h3>${citaAleatoria.cita}</h3>
     <p><strong>Versículo:</strong> ${citaAleatoria.texto}</p>
-    <p><strong>Paráfrasis:</strong> ${citaAleatoria.parafraseo}</p>
-    <img src="${citaAleatoria.img}" alt="Citas Bíblicas" style="width: 300px; height: 200px;" 
-        onerror="this.src='./img/placeholder.jpeg';">
-    <p style="color: green; font-weight: bold;">Esta promesa es para ti, ${nombre}.</p>
+    <p><strong>Lo que quiere decir es:</strong> ${citaAleatoria.parafraseo}</p>
+     <img src="${citaAleatoria.imagen}" alt="Imagen Bíblica" style="max-width: 100%; height: auto;">
+    <p style="color: green; font-weight: bold;"> Esta promesa es para ti, ${nombre}.</p>
 `;
-
 
     mainContainer.appendChild(contenedor);
 }
