@@ -83,12 +83,6 @@ h3 {
     margin: 5px 0;
 }
 
-/* Estilo para las imágenes */
-.cita-container img {
-    max-width: 100%;
-    border-radius: 5px;
-    margin-top: 15px;
-}
 
 /* Estilos para los contenedores flexbox */
 .flexbox {
