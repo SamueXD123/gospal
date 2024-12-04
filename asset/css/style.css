@@ -23,7 +23,7 @@ body {
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
-    margin-left: 15rem;
+    margin-left: 32rem;
 
 }
 
@@ -31,7 +31,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
 }
 
 .input {
@@ -42,17 +42,18 @@ body {
 
 button {
     margin-top: 5px;
-    margin-left: 50px;
+    /* margin-left: 40px; */
     width: 100px;
 
 }
 
-h3 {
+h1 {
     display: flex;
     justify-content: center;
-
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal; 
 }
-
 
 
 .cita-container {
