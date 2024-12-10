@@ -67,6 +67,6 @@ const codigoQR = new QRCode(codigoQRDiv, {
     height: 200,
     colorDark: '#000000',
     colorLight: '#ffffff',
-    correctLevel: QRCode.CorrectLevel.H
+    // correctLevel: QRCode.CorrectLevel.H
 });
 
