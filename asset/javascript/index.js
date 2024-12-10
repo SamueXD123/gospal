@@ -51,3 +51,15 @@ function agregarCitaAleatoria(nombre) {
 
     mainContainer.appendChild(contenedor);
 }
+
+
+const codigoQRDiv = document.getElementById('codigo-qr');
+const codigoQR = new QRCode(codigoQRDiv, {
+    text: "https://prioritytask.netlify.app/",
+    width: 200,  // Cambia el tamaño
+    height: 200, // Cambia el tamaño
+    colorDark: '#000000', // Color del QR
+    colorLight: '#ffffff', // Color del fondo
+    correctLevel: QRCode.CorrectLevel.H // Nivel de corrección de errores
+});
+
