@@ -13,8 +13,8 @@ body {
 .flexbox {
     display: flex;
     justify-content: center;
-    align-items: end;
-    margin: 10px;
+    align-items: center;
+    margin: auto;
     height: 200px;
     width: 300px;
     background-color: rgb(224, 241, 241);
@@ -23,15 +23,18 @@ body {
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
-    margin-left: 32rem;
-
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
 
 .input input label {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .input {
@@ -52,7 +55,7 @@ h1 {
     justify-content: center;
     font-family: "Lilita One", sans-serif;
     font-weight: 400;
-    font-style: normal; 
+    font-style: normal;
 }
 
 
@@ -124,4 +127,13 @@ h1 {
 
 .input button:hover {
     background-color: #0056b3;
+}
+
+
+
+.codigo-qr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 800px; */
 }

@@ -33,33 +33,40 @@ function agregarCitaAleatoria(nombre) {
     const citaAleatoria = citasBiblicas[Math.floor(Math.random() * citasBiblicas.length)];
     console.log(citaAleatoria)
 
+
     const contenedor = document.createElement("div");
     contenedor.classList.add("cita-container");
     contenedor.style.border = "1px solid #ccc";
     contenedor.style.borderRadius = "10px";
     contenedor.style.padding = "20px";
-    contenedor.style.margin = "20px 0";
+    contenedor.style.margin = "20px auto"; // Márgenes automáticos
     contenedor.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
+    contenedor.style.display = "flex";
+    contenedor.style.flexDirection = "column";
+    contenedor.style.alignItems = "center";
+    contenedor.style.width = "80%";
+    contenedor.style.maxWidth = "400px";
 
     contenedor.innerHTML = `
     <h3>${citaAleatoria.cita}</h3>
     <p><strong>Versículo:</strong> ${citaAleatoria.texto}</p>
     <p><strong>Lo que quiere decir es:</strong> ${citaAleatoria.parafraseo}</p>
-     <img src="${citaAleatoria.imagen}" alt="Imagen Bíblica" style="max-width: 100%; height: auto;">
-    <p style="color: green; font-weight: bold;"> Esta promesa es para ti, ${nombre}.</p>
+    <img src="${citaAleatoria.imagen}" alt="Imagen Bíblica" style="max-width: 100%; height: auto;">
+    <p style="color: green; font-weight: bold;">Esta promesa es para ti, ${nombre}.</p>
 `;
 
-    mainContainer.appendChild(contenedor);
+    document.body.appendChild(contenedor);
+
 }
 
 
 const codigoQRDiv = document.getElementById('codigo-qr');
 const codigoQR = new QRCode(codigoQRDiv, {
     text: "https://prioritytask.netlify.app/",
-    width: 200,  // Cambia el tamaño
-    height: 200, // Cambia el tamaño
-    colorDark: '#000000', // Color del QR
-    colorLight: '#ffffff', // Color del fondo
-    correctLevel: QRCode.CorrectLevel.H // Nivel de corrección de errores
+    width: 200,
+    height: 200,
+    colorDark: '#000000',
+    colorLight: '#ffffff',
+    // correctLevel: QRCode.CorrectLevel.H
 });
 
