@@ -15,7 +15,7 @@ btnEnviar.addEventListener("click", function () {
     const nombre = inputNombre.value.trim();
 
     if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombre)) {
-        alert("Por favor, ingresa un nombre válido (solo letras y espacios).");
+        alert("Por favor, ingresa un nombre válido (solo letras).");
         return;
     }
 
@@ -26,7 +26,7 @@ btnEnviar.addEventListener("click", function () {
     agregarCitaAleatoria(nombre);
 
     inputNombre.value = "";
-    alert(`Nombre ingresado: ${nombre}. Se ha agregado una nueva promesa.`);
+
 });
 
 function agregarCitaAleatoria(nombre) {
