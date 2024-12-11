@@ -69,11 +69,13 @@ function agregarCitaAleatoria(nombre) {
 
 // const codigoQRDiv = document.getElementById('codigo-qr');
 // const codigoQR = new QRCode(codigoQRDiv, {
-//     text: "https://symphonious-bienenstitch-5d811b.netlify.app/",
-//     width: 200,
-//     height: 200,
+//     text: "https://app-gospel.netlify.app/",
+//     width: 500,
+//     height: 500,
 //     colorDark: '#000000',
 //     colorLight: '#ffffff',
-//     // correctLevel: QRCode.CorrectLevel.H
+//     title: "Escanea para visitar nuestra App-Gospel",
+//     correctLevel: QRCode.CorrectLevel.H,
+//     // useSVG: true,
 // });
 

@@ -144,3 +144,53 @@ h1 {
     align-items: center;
     /* height: 800px; */
 }
+
+
+.hora {
+    background-color: #f8f9fa;
+    /* Fondo claro para resaltar */
+    border: 2px solid #007bff;
+    /* Borde azul para dar énfasis */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    padding: 20px;
+    /* Espaciado interno */
+    max-width: 300px;
+    /* Ancho máximo */
+    margin: 20px auto;
+    /* Centrar y agregar espacio alrededor */
+    text-align: center;
+    /* Centrar el texto */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    font-family: 'Arial', sans-serif;
+    /* Tipografía legible */
+}
+
+.hora p {
+    margin: 10px 0;
+    /* Espaciado entre párrafos */
+    font-size: 16px;
+    /* Tamaño de texto adecuado */
+    color: #212529;
+    /* Texto oscuro */
+}
+
+.hora p:first-child {
+    font-size: 18px;
+    /* Tamaño más grande para el primer párrafo */
+    font-weight: bold;
+    /* Negrita para destacar */
+    color: #007bff;
+    /* Color azul */
+}
+
+.hora p:nth-child(2) {
+    font-style: italic;
+    /* Texto en cursiva para la hora */
+}
+
+.hora p:nth-child(3) {
+    font-weight: bold;
+    /* Negrita para destacar la dirección */
+}
