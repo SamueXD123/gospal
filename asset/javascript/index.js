@@ -65,6 +65,26 @@ function agregarCitaAleatoria(nombre) {
     });
 }
 
+function actualizarContador() {
+    let visitas = localStorage.getItem("contadorVisitas");
+
+    // Si no hay contador, inicializarlo
+    if (!visitas) {
+        visitas = 0;
+    }
+
+    // Incrementar el contador
+    visitas++;
+
+    // Almacenar el contador actualizado
+    localStorage.setItem("contadorVisitas", visitas);
+
+    // Mostrar el contador en la página
+    document.getElementById("contador").textContent = `Número de visitas: ${visitas}`;
+}
+
+// Llamar a la función para actualizar el contador al cargar la página
+window.onload = actualizarContador;
 
 
 // const codigoQRDiv = document.getElementById('codigo-qr');
