@@ -200,7 +200,7 @@ h1 {
 .highlight {
     display: inline-block;
     font-size: 40px;
-    color: #ff3399;
+    color: #4cf100;
     /* Color especial para "accesible" */
     font-weight: 900;
     text-shadow: 0 0 10px #ff99cc, 0 0 20px #ff66b2;
@@ -236,16 +236,16 @@ h1 {
 @keyframes pop {
     0% {
         transform: scale(1);
-        text-shadow: 0 0 10px #ff99cc, 0 0 20px #ff66b2;
+        text-shadow: 0 0 10px #810c47, 0 0 20px #5a1035;
     }
 
     50% {
         transform: scale(1.2);
-        text-shadow: 0 0 15px #ff99cc, 0 0 25px #ff66b2;
+        text-shadow: 0 0 15px #810c47, 0 0 20px #5a1035;
     }
 
     100% {
         transform: scale(1);
-        text-shadow: 0 0 10px #ff99cc, 0 0 20px #ff66b2;
+        text-shadow: 0 0 10px #810c47, 0 0 20px #5a1035;
     }
 }
