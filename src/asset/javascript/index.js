@@ -86,4 +86,14 @@ btnEnviar.addEventListener("click", function () {
     }
 
 
+    // const codigoQRDiv = document.getElementById('codigo-qr');
+    // const codigoQR = new QRCode(codigoQRDiv, {
+    //     text: "https://app-gospel.netlify.app/",
+    //     width: 200,
+    //     height: 200,
+    //     colorDark: '#000000',
+    //     colorLight: '#ffffff',
+    //     correctLevel: QRCode.CorrectLevel.H
+    // });
+
 });
