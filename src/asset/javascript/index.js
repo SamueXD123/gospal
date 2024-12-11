@@ -14,46 +14,26 @@ document.body.appendChild(mainContainer);
 btnEnviar.addEventListener("click", function () {
     const nombre = inputNombre.value.trim();
 
-    // Validar si el nombre está vacío
     if (nombre === "") {
         alert("Por favor, ingresa tu nombre.");
-        return; // Detener el resto del código si el nombre está vacío
+        return;
     }
 
-    // Validar que el nombre solo contenga letras y espacios
     const nombreValido = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombre);
     if (!nombreValido) {
         alert("Por favor, ingresa un nombre válido (solo letras y espacios).");
-        return; // Detener el resto del código si la validación falla
+        return;
     }
 
-    // Si el nombre es válido, continuar con el resto de la lógica
-    formContainer.style.display = "none"; // Ocultar el formulario
-
-    // Limpiar la sección de citas
+    formContainer.style.display = "none";
     mainContainer.innerHTML = "";
 
-    // Agregar la cita aleatoria
     agregarCitaAleatoria(nombre);
 
-    // Limpiar el campo de entrada
     inputNombre.value = "";
 
-    // fetch('http://localhost:4000/registro', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({ nombre: nombre })  // Nombre del visitante
-    // })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         console.log("Registro exitoso:", data);
-    //     })
-    //     .catch(error => {
-    //         console.error("Error al registrar:", error);
-    //     });
-    fetch('http://localhost:4000/supabase', {
+
+    fetch('http://localhost:5000/supabase', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
