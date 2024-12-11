@@ -2,8 +2,8 @@ import { citasBiblicas } from '../javascript/citasBiblicas.js';
 
 const btnEnviar = document.querySelector("#enviar");
 const inputNombre = document.querySelector("#nombre");
+const formContainer = document.querySelector(".flexbox");
 
-// Crear contenedor principal
 const mainContainer = document.createElement("div");
 mainContainer.id = "citas-container";
 mainContainer.style.margin = "20px auto";
@@ -11,7 +11,6 @@ mainContainer.style.maxWidth = "800px";
 mainContainer.style.textAlign = "center";
 document.body.appendChild(mainContainer);
 
-// Evento para manejar clic en el botón "Enviar"
 btnEnviar.addEventListener("click", function () {
     const nombre = inputNombre.value.trim();
 
@@ -20,7 +19,9 @@ btnEnviar.addEventListener("click", function () {
         return;
     }
 
+    formContainer.style.display = "none";
 
+    // Mostrar la cita
     mainContainer.innerHTML = "";
     agregarCitaAleatoria(nombre);
 
@@ -28,18 +29,15 @@ btnEnviar.addEventListener("click", function () {
     alert(`Nombre ingresado: ${nombre}. Se ha agregado una nueva promesa.`);
 });
 
-// Función para agregar una cita aleatoria
 function agregarCitaAleatoria(nombre) {
     const citaAleatoria = citasBiblicas[Math.floor(Math.random() * citasBiblicas.length)];
-    console.log(citaAleatoria)
-
 
     const contenedor = document.createElement("div");
     contenedor.classList.add("cita-container");
     contenedor.style.border = "1px solid #ccc";
     contenedor.style.borderRadius = "10px";
     contenedor.style.padding = "20px";
-    contenedor.style.margin = "20px auto"; // Márgenes automáticos
+    contenedor.style.margin = "20px auto";
     contenedor.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
     contenedor.style.display = "flex";
     contenedor.style.flexDirection = "column";
@@ -48,25 +46,34 @@ function agregarCitaAleatoria(nombre) {
     contenedor.style.maxWidth = "400px";
 
     contenedor.innerHTML = `
-    <h3>${citaAleatoria.cita}</h3>
-    <p><strong>Versículo:</strong> ${citaAleatoria.texto}</p>
-    <p><strong>Lo que quiere decir es:</strong> ${citaAleatoria.parafraseo}</p>
-    <img src="${citaAleatoria.imagen}" alt="Imagen Bíblica" style="max-width: 100%; height: auto;">
-    <p style="color: green; font-weight: bold;">Esta promesa es para ti, ${nombre}.</p>
-`;
+        <h3>${citaAleatoria.cita}</h3>
+        <p><strong>Versículo:</strong> ${citaAleatoria.texto}</p>
+        <p><strong>Lo que quiere decir es:</strong> ${citaAleatoria.parafraseo}</p>
+        <img src="${citaAleatoria.imagen}" alt="Imagen Bíblica" style="max-width: 100%; height: auto;">
+        <p style="color: green; font-weight: bold;">Esta promesa es para ti, ${nombre}.</p>
+        <button id="volver" style="margin-top: 20px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Volver al formulario
+        </button>
+    `;
 
-    document.body.appendChild(contenedor);
+    mainContainer.appendChild(contenedor);
 
+    const btnVolver = document.querySelector("#volver");
+    btnVolver.addEventListener("click", function () {
+        mainContainer.innerHTML = "";
+        formContainer.style.display = "block";
+    });
 }
 
 
-const codigoQRDiv = document.getElementById('codigo-qr');
-const codigoQR = new QRCode(codigoQRDiv, {
-    text: "https://prioritytask.netlify.app/",
-    width: 200,
-    height: 200,
-    colorDark: '#000000',
-    colorLight: '#ffffff',
-    // correctLevel: QRCode.CorrectLevel.H
-});
+
+// const codigoQRDiv = document.getElementById('codigo-qr');
+// const codigoQR = new QRCode(codigoQRDiv, {
+//     text: "https://symphonious-bienenstitch-5d811b.netlify.app/",
+//     width: 200,
+//     height: 200,
+//     colorDark: '#000000',
+//     colorLight: '#ffffff',
+//     // correctLevel: QRCode.CorrectLevel.H
+// });
 
