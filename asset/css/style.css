@@ -142,55 +142,110 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 800px; */
 }
 
 
 .hora {
     background-color: #f8f9fa;
-    /* Fondo claro para resaltar */
     border: 2px solid #007bff;
-    /* Borde azul para dar énfasis */
     border-radius: 8px;
-    /* Bordes redondeados */
     padding: 20px;
-    /* Espaciado interno */
     max-width: 300px;
-    /* Ancho máximo */
     margin: 20px auto;
-    /* Centrar y agregar espacio alrededor */
     text-align: center;
-    /* Centrar el texto */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Sombra sutil */
     font-family: 'Arial', sans-serif;
-    /* Tipografía legible */
 }
 
 .hora p {
     margin: 10px 0;
-    /* Espaciado entre párrafos */
     font-size: 16px;
-    /* Tamaño de texto adecuado */
     color: #212529;
-    /* Texto oscuro */
 }
 
 .hora p:first-child {
     font-size: 18px;
-    /* Tamaño más grande para el primer párrafo */
     font-weight: bold;
-    /* Negrita para destacar */
     color: #007bff;
-    /* Color azul */
 }
 
 .hora p:nth-child(2) {
     font-style: italic;
-    /* Texto en cursiva para la hora */
 }
 
 .hora p:nth-child(3) {
     font-weight: bold;
-    /* Negrita para destacar la dirección */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+.msg {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900, 0 0 30px #ff6600;
+    animation: fadeIn 2s ease-in-out;
+    /* Animación para aparecer suavemente */
+}
+
+.msg p {
+    margin: 0;
+    line-height: 1.2;
+    animation: glow 1.5s infinite alternate;
+    /* Efecto de resplandor */
+}
+
+.highlight {
+    display: inline-block;
+    font-size: 40px;
+    color: #ff3399;
+    /* Color especial para "accesible" */
+    font-weight: 900;
+    text-shadow: 0 0 10px #ff99cc, 0 0 20px #ff66b2;
+    animation: pop 1.5s infinite alternate;
+    /* Animación única */
+}
+
+/* Animación del texto al aparecer */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación del resplandor */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900, 0 0 30px #ff6600;
+    }
+
+    to {
+        text-shadow: 0 0 20px #ffcc00, 0 0 30px #ff9900, 0 0 50px #ff6600;
+    }
+}
+
+/* Animación especial para "accesible" */
+@keyframes pop {
+    0% {
+        transform: scale(1);
+        text-shadow: 0 0 10px #ff99cc, 0 0 20px #ff66b2;
+    }
+
+    50% {
+        transform: scale(1.2);
+        text-shadow: 0 0 15px #ff99cc, 0 0 25px #ff66b2;
+    }
+
+    100% {
+        transform: scale(1);
+        text-shadow: 0 0 10px #ff99cc, 0 0 20px #ff66b2;
+    }
 }
