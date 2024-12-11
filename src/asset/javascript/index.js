@@ -39,19 +39,33 @@ btnEnviar.addEventListener("click", function () {
     // Limpiar el campo de entrada
     inputNombre.value = "";
 
-    fetch('http://localhost:4000/registro', {
+    // fetch('http://localhost:4000/registro', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({ nombre: nombre })  // Nombre del visitante
+    // })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         console.log("Registro exitoso:", data);
+    //     })
+    //     .catch(error => {
+    //         console.error("Error al registrar:", error);
+    //     });
+    fetch('http://localhost:4000/supabase', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ nombre: nombre })  // Nombre del visitante
+        body: JSON.stringify({ nombre: nombre }),
     })
-        .then(response => response.json())
-        .then(data => {
-            console.log("Registro exitoso:", data);
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Registro exitoso:', data);
         })
-        .catch(error => {
-            console.error("Error al registrar:", error);
+        .catch((error) => {
+            console.error('Error al registrar:', error);
         });
 
 
@@ -90,4 +104,6 @@ btnEnviar.addEventListener("click", function () {
             formContainer.style.display = "block";
         });
     }
+
+
 });
