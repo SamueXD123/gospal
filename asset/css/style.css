@@ -6,11 +6,10 @@
 
 
 body {
-    margin-top: 20vh;
-
+    margin-top: 10vh;
 }
 
-.flexbox {
+/* .flexbox {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,6 +26,19 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+} */
+
+.flexbox {
+    margin: 0 auto;
+    max-width: 200px;
+}
+
+
+.flexbox .input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 
@@ -88,12 +100,7 @@ h1 {
 }
 
 
-/* Estilos para los contenedores flexbox */
-.flexbox {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-}
+
 
 /* Estilos para el input y el botón */
 .input {
@@ -135,5 +142,5 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 800px;
+    /* height: 800px; */
 }
