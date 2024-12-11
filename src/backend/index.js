@@ -3,8 +3,7 @@ import { config } from 'dotenv';
 import cors from 'cors';
 import { guardarVisitaSupabase } from '../services/supabase.js';
 
-config(); // Cargar las variables de entorno
-
+config();
 const app = express();
 const port = process.env.PORT || 4000;
 
@@ -13,7 +12,6 @@ app.use(cors());
 
 const router = express.Router();
 
-// Ruta para registrar visitas en Supabase
 router.post('/supabase', async (req, res) => {
     try {
         const { nombre } = req.body;
@@ -22,7 +20,6 @@ router.post('/supabase', async (req, res) => {
             return res.status(400).json({ error: 'El nombre es requerido.' });
         }
 
-        // Guardar la visita en Supabase
         const data = await guardarVisitaSupabase(nombre);
         res.status(201).json({ mensaje: 'Registro exitoso en Supabase', data });
     } catch (error) {
